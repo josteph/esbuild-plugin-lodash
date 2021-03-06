@@ -1,11 +1,6 @@
 {
   "npm": {
-    "publish": true,
-    "publishPath": ".",
-    "otp": null,
-    "ignoreVersion": false,
-    "skipChecks": false,
-    "timeout": 10
+    "publish": true
   },
   "github": {
     "release": true,

@@ -1,6 +1,12 @@
 name: Release
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version Type'     
+        required: true
+        default: 'patch'
 
 jobs:
   release:
@@ -14,7 +20,7 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
       - run: npm install
-      - run: npm run release -- --ci
+      - run: npm run release -- ${{ github.event.inputs.version }} --ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
