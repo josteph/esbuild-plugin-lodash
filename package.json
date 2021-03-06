@@ -1,0 +1,24 @@
+{
+  "name": "esbuild-plugin-lodash",
+  "version": "1.0.0",
+  "description": "Similar babel-plugin-lodash for esbuild",
+  "main": "index.js",
+  "keywords": [
+    "esbuild",
+    "esbuild-plugin",
+    "lodash"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josteph/esbuild-plugin-lodash.git"
+  },
+  "author": "Joshua Stephen (https://github.com/josteph)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josteph/esbuild-plugin-lodash/issues"
+  },
+  "homepage": "https://github.com/josteph/esbuild-plugin-lodash"
+}
