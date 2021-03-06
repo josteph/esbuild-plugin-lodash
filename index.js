@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 
-async function pluginLodashImport(options = {}) {
+function pluginLodashImport(options = {}) {
   const { filter = /.*/, namespace = '' } = options;
 
   return {
@@ -8,13 +9,18 @@ async function pluginLodashImport(options = {}) {
     setup(build) {
       build.onLoad({ filter, namespace }, async args => {
         const contents = await fs.promises.readFile(args.path, 'utf8');
+        const extension = path.extname(args.path).replace('.', '');
+        const loader = extension === 'js' ? 'jsx' : extension;
 
         const lodashImportRegex = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from\s+?)|)(?:(?:'lodash\/?.*?'))[\s]*?(?:;|$|)/g;
 
         const lodashImports = contents.match(lodashImportRegex);
 
         if (!lodashImports) {
-          return contents;
+          return {
+            loader,
+            contents
+          };
         }
 
         const destructuredImportRegex = /\{\s?(((\w+),?\s?)+)\}/g;
@@ -58,7 +64,10 @@ async function pluginLodashImport(options = {}) {
           finalContents = contents.replace(line, result);
         });
 
-        return finalContents;
+        return {
+          loader,
+          contents: finalContents
+        };
       });
     },
   };
