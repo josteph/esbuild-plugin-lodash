@@ -6,7 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added 
+
+- chore: add token to npmrc
+- chore: add manual changelog
+
 ## [1.0.0] - 2021-03-06
+
 ### Added
 - chore: add release opts [f028907](https://github.com/josteph/esbuild-plugin-lodash/commit/f028907)
 - chore: add workflow [7426660](https://github.com/josteph/esbuild-plugin-lodash/commit/7426660)

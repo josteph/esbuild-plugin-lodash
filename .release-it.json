@@ -2,8 +2,8 @@
   "npm": {
     "publish": true
   },
-  "github": {
-    "release": true,
+  "git": {
+    "requireCleanWorkingDir": false,
     "commitMessage": "chore(release): Release v${version}"
   },
   "plugins": {
