@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/josteph/esbuild-plugin-lodash/compare/1.0.1...1.0.2) (2021-03-06)
+
+
+### Bug Fixes
+
+* loader & function type ([e710105](https://github.com/josteph/esbuild-plugin-lodash/commit/e710105e9a795ac2180b10efeeb52078668ba052))
+
 ## [1.0.1](https://github.com/josteph/esbuild-plugin-lodash/compare/1.0.0...1.0.1) (2021-03-06)
 
 
