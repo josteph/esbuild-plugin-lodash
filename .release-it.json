@@ -6,7 +6,7 @@
     "commitMessage": "chore(release): Release v${version}"
   },
   "plugins": {
-    "@release-it/keep-a-changelog": {
+    "@release-it/conventional-changelog": {
       "preset": "angular",
       "infile": "CHANGELOG.md"
     }
