@@ -14,7 +14,8 @@
     "index.js"
   ],
   "scripts": {
-    "release": "release-it"
+    "release": "release-it",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,8 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^2.0.1",
+    "esbuild": "^0.11.22",
+    "jest": "^26.1.0",
     "release-it": "*"
   },
   "publishConfig": {
