@@ -2,12 +2,12 @@ const fs = require('fs');
 const path = require('path');
 
 function pluginLodashImport(options = {}) {
-  const { filter = /.*/, namespace = '' } = options;
+  const { filter = /.*/ } = options;
 
   return {
     name: 'lodash',
     setup(build) {
-      build.onLoad({ filter, namespace }, async args => {
+      build.onLoad({ filter }, async args => {
         const contents = await fs.promises.readFile(args.path, 'utf8');
         const extension = path.extname(args.path).replace('.', '');
         const loader = extension === 'js' ? 'jsx' : extension;

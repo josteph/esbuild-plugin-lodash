@@ -62,4 +62,4 @@ isEmpty(something);
 
 ## Options
 
-You can specify your own `filter` and `namespace` as per according to esbuild docs [here](https://esbuild.github.io/plugins/#concepts).
+You can specify your own `filter` as per according to esbuild docs [here](https://esbuild.github.io/plugins/#concepts).
