@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/josteph/esbuild-plugin-lodash/compare/1.0.2...1.0.3) (2021-05-16)
+
+
+### Bug Fixes
+
+* remove namespace option, use esbuild default namespace ([489d8b3](https://github.com/josteph/esbuild-plugin-lodash/commit/489d8b32a86e32aef8d4fcc32aad3475091efc17))
+
 ## [1.0.2](https://github.com/josteph/esbuild-plugin-lodash/compare/1.0.1...1.0.2) (2021-03-06)
 
 
