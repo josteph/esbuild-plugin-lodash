@@ -9,7 +9,7 @@ const lodashPlugin = require('..');
 const resolvePath = file => path.resolve(__dirname, file);
 
 describe('Lodash plugin tests', () => {
-  it('should use aliased import', async () => {
+  it('should use named import when transformed', async () => {
     const output = fs.readFileSync(resolvePath('fixtures/alias/output.js'), 'utf-8');
 
     const res = await esbuild.build({
@@ -22,7 +22,7 @@ describe('Lodash plugin tests', () => {
     expect(res.outputFiles[0].text).toStrictEqual(output);
   });
 
-  it('should use aliased import', async () => {
+  it('should handle destructured import transformation', async () => {
     const output = fs.readFileSync(resolvePath('fixtures/destructured/output.js'), 'utf-8');
 
     const res = await esbuild.build({
