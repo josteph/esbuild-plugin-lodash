@@ -47,15 +47,9 @@ function pluginLodashImport(options = {}) {
 
           importName.forEach(name => {
             const previousResult = `${result ? `${result}\n` : ''}`;
-
-            if (name.includes('as')) {
-              const realImportName = name.split(' as ');
-
-              if (realImportName.length !== 2) {
-                return;
-              }
-
-              result = `${previousResult}import ${realImportName[1]} from 'lodash/${realImportName[0]}';`;
+            if (name.includes(' as ')) {
+              const [realName, alias] = name.split(' as ');
+              result = `${previousResult}import ${alias} from 'lodash/${realName}';`;
             } else {
               result = `${previousResult}import ${name} from 'lodash/${name}';`;
             }

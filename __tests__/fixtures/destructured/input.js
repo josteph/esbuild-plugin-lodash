@@ -1,4 +1,4 @@
-import { isEmpty, chunk } from 'lodash';
+import { isEmpty, chunk, last } from 'lodash';
 
 const empty = {};
 const notEmpty = {
@@ -9,3 +9,5 @@ isEmpty(obj);
 isEmpty(notEmpty);
 
 chunk(['a', 'b', 'c', 'd'], 2);
+
+last(['a', 'b']);
