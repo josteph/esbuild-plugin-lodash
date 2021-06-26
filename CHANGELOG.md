@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/josteph/esbuild-plugin-lodash/compare/1.0.3...1.0.4) (2021-06-26)
+
+
+### Bug Fixes
+
+* import lodash/last bug ([#1](https://github.com/josteph/esbuild-plugin-lodash/issues/1)) ([e91dff2](https://github.com/josteph/esbuild-plugin-lodash/commit/e91dff2c9f5559a16446bdfe1761e56bba1ac2b9))
+
 ## [1.0.3](https://github.com/josteph/esbuild-plugin-lodash/compare/1.0.2...1.0.3) (2021-05-16)
 
 
