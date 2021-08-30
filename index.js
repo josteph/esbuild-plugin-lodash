@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 function pluginLodashImport(options = {}) {
-  const { filter = /.*/ } = options;
+  const { filter = /.*/, outLodashPackage = 'lodash' } = options;
 
   return {
     name: 'lodash',
@@ -49,9 +49,9 @@ function pluginLodashImport(options = {}) {
             const previousResult = `${result ? `${result}\n` : ''}`;
             if (name.includes(' as ')) {
               const [realName, alias] = name.split(' as ');
-              result = `${previousResult}import ${alias} from 'lodash/${realName}';`;
+              result = `${previousResult}import ${alias} from '${outLodashPackage}/${realName}';`;
             } else {
-              result = `${previousResult}import ${name} from 'lodash/${name}';`;
+              result = `${previousResult}import ${name} from '${outLodashPackage}/${name}';`;
             }
           });
 

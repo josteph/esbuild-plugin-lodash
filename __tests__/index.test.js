@@ -22,6 +22,19 @@ describe('Lodash plugin tests', () => {
     expect(res.outputFiles[0].text).toStrictEqual(output);
   });
 
+  it('should honor outLodashPackage option', async () => {
+    const output = fs.readFileSync(resolvePath('fixtures/es/output.js'), 'utf-8');
+
+    const res = await esbuild.build({
+      entryPoints: [resolvePath('fixtures/es/input.js')],
+      bundle: false,
+      plugins: [lodashPlugin({ outLodashPackage: 'lodash-es' })],
+      write: false,
+    });
+
+    expect(res.outputFiles[0].text).toStrictEqual(output);
+  });
+
   it('should handle destructured import transformation', async () => {
     const output = fs.readFileSync(resolvePath('fixtures/destructured/output.js'), 'utf-8');
 
