@@ -26,7 +26,7 @@ describe('Lodash plugin tests', () => {
     const output = fs.readFileSync(resolvePath('fixtures/es/output.js'), 'utf-8');
 
     const res = await esbuild.build({
-      entryPoints: [resolvePath('fixtures/es/input.js')],
+      entryPoints: [resolvePath('fixtures/es/input.mjs')],
       bundle: false,
       plugins: [lodashPlugin({ outLodashPackage: 'lodash-es' })],
       write: false,
