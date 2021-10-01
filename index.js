@@ -1,8 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
+// All extensions included here: https://esbuild.github.io/content-types/#javascript
+const JS_EXTENSIONS = new Set(['js', 'cjs', 'mjs']);
+
 function pluginLodashImport(options = {}) {
-  const { filter = /.*/ } = options;
+  const { filter = /.*/, outLodashPackage = 'lodash' } = options;
 
   return {
     name: 'lodash',
@@ -10,7 +13,7 @@ function pluginLodashImport(options = {}) {
       build.onLoad({ filter }, async args => {
         const contents = await fs.promises.readFile(args.path, 'utf8');
         const extension = path.extname(args.path).replace('.', '');
-        const loader = extension === 'js' ? 'jsx' : extension;
+        const loader = JS_EXTENSIONS.has(extension) ? 'jsx' : extension;
 
         const lodashImportRegex = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from\s+?)|)(?:(?:'lodash\/?.*?'))[\s]*?(?:;|$|)/g;
 
@@ -49,9 +52,9 @@ function pluginLodashImport(options = {}) {
             const previousResult = `${result ? `${result}\n` : ''}`;
             if (name.includes(' as ')) {
               const [realName, alias] = name.split(' as ');
-              result = `${previousResult}import ${alias} from 'lodash/${realName}';`;
+              result = `${previousResult}import ${alias} from '${outLodashPackage}/${realName}';`;
             } else {
-              result = `${previousResult}import ${name} from 'lodash/${name}';`;
+              result = `${previousResult}import ${name} from '${outLodashPackage}/${name}';`;
             }
           });
 

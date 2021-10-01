@@ -63,3 +63,6 @@ isEmpty(something);
 ## Options
 
 You can specify your own `filter` as per according to esbuild docs [here](https://esbuild.github.io/plugins/#concepts).
+
+You can specify `outLodashPackage` which by default is `lodash`. An example
+of this would be specifying calls to be rewritten to use `lodash-es`.
