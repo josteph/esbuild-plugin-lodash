@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/josteph/esbuild-plugin-lodash/compare/1.0.4...1.1.0) (2021-10-01)
+
+
+### Features
+
+* Add outLodashPackage feature to allow for lodash-es, fix .cjs and .mjs files. ([#2](https://github.com/josteph/esbuild-plugin-lodash/issues/2)) ([f604fee](https://github.com/josteph/esbuild-plugin-lodash/commit/f604feed0a4a61b7fbbc8caf35a525d2898a28ee))
+
 ## [1.0.4](https://github.com/josteph/esbuild-plugin-lodash/compare/1.0.3...1.0.4) (2021-06-26)
 
 
