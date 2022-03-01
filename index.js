@@ -15,8 +15,7 @@ function pluginLodashImport(options = {}) {
         const extension = path.extname(args.path).replace('.', '');
         const loader = JS_EXTENSIONS.has(extension) ? 'jsx' : extension;
 
-        const ramdaImportRegex =
-          /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from\s+?)|)[\'\"](?:(?:lodash\/?.*?))[\'\"][\s]*?(?:;|$|)/g;
+        const ramdaImportRegex = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from\s+?)|)[\'\"](?:(?:lodash\/?.*?))[\'\"][\s]*?(?:;|$|)/g;
 
         const lodashImports = contents.match(lodashImportRegex);
 
