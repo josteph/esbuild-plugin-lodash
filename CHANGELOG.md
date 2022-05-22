@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/josteph/esbuild-plugin-lodash/compare/1.1.0...1.2.0) (2022-05-22)
+
+
+### Features
+
+* handle double quotes lodash imports ([#4](https://github.com/josteph/esbuild-plugin-lodash/issues/4)) ([ee59f86](https://github.com/josteph/esbuild-plugin-lodash/commit/ee59f86ce5f45239098e7e6740eb94008484ccdb)), closes [/github.com/mikeduminy/esbuild-plugin-ramda/blob/main/index.js#L18](https://github.com//github.com/mikeduminy/esbuild-plugin-ramda/blob/main/index.js/issues/L18)
+
 # [1.1.0](https://github.com/josteph/esbuild-plugin-lodash/compare/1.0.4...1.1.0) (2021-10-01)
 
 
